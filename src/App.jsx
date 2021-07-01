@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import "bootstrap/dist/css/bootstrap.min.css"
 import axios from 'axios'
-import { response } from 'express'
+
 
 class App extends Component {
     constructor() {
@@ -32,8 +32,8 @@ class App extends Component {
             password: this.state.password
         }
         //  after window.location='/Profile'
-        axios.post('http://localhost:3003/app/signup', userobj)
-            .then(response => console.log(response.data))
+        axios.post('https://newuser-9f1a7ecf-505e-4566-808c.cranecloud.io/app/signup', userobj)
+            .then(response => alert(response.data.username + " added"))
         this.setState({
             username: '',
             password: ''

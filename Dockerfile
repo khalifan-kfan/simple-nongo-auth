@@ -1,7 +1,7 @@
-FROM node:alpine
-WORKDIR '/app'
+FROM node:14
+WORKDIR /app
 
 COPY package.json . 
 RUN yarn
-COPY . .
+COPY . /app
 CMD ["yarn","start"]
